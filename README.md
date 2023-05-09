@@ -1,6 +1,8 @@
 # react_tutorial_01
 
-## 手順
+## 手順(Windows)
+
+以下はWindows用。Mac用は最下部
 
 ### 必要ツールインストール
 
@@ -47,6 +49,7 @@ systemd=true
   - WSL
   - Docker
   - Git History
+  - Remote SSH
 
 ### プロジェクト初期設定
 
@@ -63,6 +66,47 @@ docker compose run -u $(id -u) --rm front sh -c "cd ~/ && npx create-react-app a
 ### コンテナ起動
 
 `docker-compose.yml` を右クリックし、 `Compose Up` を実行
+
+---
+
+## Mac用
+
+[lima-vm/lima: Linux virtual machines, typically on macOS, for running containerd](https://github.com/lima-vm/lima)
+
+を使う。
+
+### homebrewインストール
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Limaインストール
+
+```bash
+brew install lima
+```
+
+### 仮想環境実行
+
+```bash
+# 仮想環境設定ファイル(Ubuntu)ダウンロード
+wget https://raw.githubusercontent.com/h-t-t/react_tutorial_01/master/ubuntu.yaml
+
+# limactlで起動(自動的に仮想環境がダウンロードされる)
+limactl start ubuntu.yaml
+
+# 仮想環境のbashシェルに入る
+limactl shell ubuntu
+```
+
+## VSCodeインストール
+
+```bash
+brew install --cask visual-studio-code
+```
+
+入れる拡張はWindowsの項目を参考に
 
 ## 参考
 
