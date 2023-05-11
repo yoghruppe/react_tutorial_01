@@ -22,10 +22,10 @@
 以下のコマンドを入力して `systemd` を有効化する
 
 ```bash
-sudo echo "
+echo "
 [boot]
 systemd=true
-" >> /etc/wsl.conf
+" | sudo tee /etc/wsl.conf
 ```
 
 終わったらPowerShellで `wsl --shutdown` と入力し、WSL再起動
