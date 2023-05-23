@@ -1,4 +1,4 @@
-# react_tutorial_01
+# react_tutorial
 
 ## 手順(Windows)
 
@@ -91,7 +91,7 @@ brew install lima
 
 ```bash
 # 仮想環境設定ファイル(Ubuntu)ダウンロード
-wget https://raw.githubusercontent.com/h-t-t/react_tutorial_01/master/ubuntu.yaml
+wget https://raw.githubusercontent.com/h-t-t/react_tutorial/master/ubuntu.yaml
 
 # limactlで起動(自動的に仮想環境がダウンロードされる)
 limactl start ubuntu.yaml
@@ -111,3 +111,4 @@ brew install --cask visual-studio-code
 ## 参考
 
 - https://qiita.com/shun198/items/18014c46901f256af9ee
+- https://zenn.dev/acha_n/articles/deploy-react-app-with-github-actions
