@@ -1,39 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import HogeHoge from './Hoge.js'
+import {useState} from 'react';
 
-function Hoge() {
-  return (
-    <div>
-      <h1>Hoge</h1>
-    </div>
-  )
-}
+let counter = 0;
 
 function App() {
+  //useState()関数は、
+  //変数の初期値を設定する
+  //変数を更新するための関数を作る
+  //という処理を実行し、その初期値と関数を配列の形で返す。
+  const[counter,setCounter] = useState();
+  console.info(counter,setCounter);
+  const plusOne = () => {
+    setCounter(counter + 1);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        {(function () {
-          const h1s = [];
-          for (let i = 0; i < 5; i++) {
-            h1s.push(<HogeHoge />);
-          }
-          return <div>{h1s}</div>;
-        }())}
-        <Hoge />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          hello world
+          カウンタプログラム
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>{counter}</p>
+        <button id = "plus" type = "button" onClick = {plusOne}>
+          +1する
+        </button>
       </header>
     </div>
   );
